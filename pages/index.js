@@ -19,15 +19,12 @@ export default function Home() {
                  </div>
               </div>
               <div className="Landing-contact">
-                <div>
-                  <a href="tel:414-975-7542"><FontAwesomeIcon icon={faPhone} />414-975-7542</a>
-                </div>
                 <div><a href="mailto:alexis@saddiewithafaddie.com"><FontAwesomeIcon icon={faEnvelope} />alexis@saddiewithafaddie.com</a></div>
               </div>
               <div className="Landing-links">
                 <a className="Landing-link" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon"/>Only Fans</a>
-                <a className="Landing-link" color="inherit" href="https://www.instagram.com/saddiewithafaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
-                <a className="Landing-link" color="inherit" href="https://www.twitter.com/saddiewithafaddie"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+                <a className="Landing-link" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+                <a className="Landing-link" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
               </div>
             </div>
           </div>
