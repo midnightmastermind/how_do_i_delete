@@ -22,13 +22,12 @@ export default function Home() {
                 <div>
                   <a href="tel:414-975-7542"><FontAwesomeIcon icon={faPhone} />414-975-7542</a>
                 </div>
-                <div><a href="mailto:josh@jpoms.com"><FontAwesomeIcon icon={faEnvelope} />josh@jpoms.com</a></div>
+                <div><a href="mailto:alexis@saddiewithafaddie.com"><FontAwesomeIcon icon={faEnvelope} />alexis@saddiewithafaddie.com</a></div>
               </div>
               <div className="Landing-links">
-                <a className="Landing-link" color="inherit" href="https://www.instagram.com/joshpoms"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
-                <a className="Landing-link" color="inherit" href="http://rainbowconnectionbus.com"><FontAwesomeIcon className="icon" icon={faBus}/>Skoolie</a>
-                <a className="Landing-link" color="inherit" href="https://www.facebook.com/joshpoms"><FontAwesomeIcon className="icon" icon={faFacebookF}/>Facebook</a>
-                <a className="Landing-link" color="inherit" href="https://www.twitter.com/joshpoms"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+                <a className="Landing-link" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon"/>Only Fans</a>
+                <a className="Landing-link" color="inherit" href="https://www.instagram.com/saddiewithafaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+                <a className="Landing-link" color="inherit" href="https://www.twitter.com/saddiewithafaddie"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
               </div>
             </div>
           </div>

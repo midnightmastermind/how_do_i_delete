@@ -84,6 +84,7 @@ html, body {
 .App-welcomescreen {
     background-color: rgba(0,0,0,0.3);
     border-radius: 25px;
+    width: 400px;
     color: white;
     border: 1px solid white;
     padding: 25px;
@@ -158,4 +159,26 @@ html, body {
 }
 .Landing-title h2 {
   padding: 10px 0px;
+}
+
+.onlyfans-icon {
+  background: url('./onlyfans.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.Landing-contact {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.Landing-contact a{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
 }
