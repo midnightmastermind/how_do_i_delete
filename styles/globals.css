@@ -91,6 +91,8 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 15vh;
 }
 .App-content {
 	padding: 25px;
@@ -100,20 +102,19 @@ html, body {
   background-attachment: fixed;
   background-size: contain;
   height: 100vh;
-  width: 50%;
   margin: 0 auto;
+  width: 100%;
 }
 
 
 .LandingLinks-page .App-splashscreen {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	top: 0px;
 	left: 0px;
 	display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 200px;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -123,16 +124,22 @@ html, body {
 }
 
 .App-logo {
+  background: url('./applogo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: -100px;
+}
+
+.App-logo:hover {
   background: url('./saddie.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  display: inline-block
 }
-
 .Landing-links {
   display: flex;
   flex-direction: column;
@@ -168,8 +175,12 @@ html, body {
   background-size: cover;
   width: 20px;
   height: 20px;
+  color: white;
 }
 
+svg {
+  margin-right: 5px;
+}
 .Landing-contact {
   padding: 10px 0px;
   display: flex;
@@ -181,4 +192,56 @@ html, body {
   color: white;
   text-decoration: none;
   cursor: pointer;
+}
+.Landing-links {
+  margin-right: 25px;
+  padding-top: 15px;
+}
+.Landing-link {
+  background-color: rgba(0,0,0,0.3);
+}
+.Landing-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.Landing-schedule {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-title {
+  align-self: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+table, td, th {
+  border: 1px solid white;
+  padding: 3px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(0,0,0,0.3);
+}
+
+.titles {
+  display: flex;
+}
+
+.onlyfans-title {
+  margin-top: 2px;
+}
+@media (max-width: 600px) {
+  .App-welcomescreen {
+    width: 100%;
+  }
+}
+@media (max-height: 700px) {
+  .App-welcomescreen {
+    top: 25px;
+  }
 }
