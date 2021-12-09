@@ -10,7 +10,7 @@ import { useState } from 'react';
 export default function Home() {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
-  const [videoPlayed, setVideoPlayed] = useState(false)
+  const [videoPlayed, setVideoPlayed] = useState(true)
   const removeGif = () => {
     setTimeout(() => {
       setVideoPlayed(true);
@@ -24,7 +24,7 @@ export default function Home() {
           {question && <div className="ageVerification">
             <div className="ageVerificationQuestion">Are you over the age of 18?</div>
               <div className="ageVerificationAnswers">
-                <a className="ageVerificationAnswer" onClick={() => {removeGif(); setShowContent(true);} }>Yes</a>
+                <a className="ageVerificationAnswer" onClick={() => setShowContent(true)}>Yes</a>
                 <a className="ageVerificationAnswer" onClick={() => setQuestion(false)}>No</a>
               </div>
             </div>
