@@ -50,6 +50,7 @@ export default function Home({letter}) {
           width="100%"
           playing
           muted
+          controls
           playsInline
           fileConfig={{ attributes: { autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
           volume={.05}
