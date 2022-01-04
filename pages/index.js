@@ -46,13 +46,10 @@ export default function Home({letter}) {
         <video
           className='react-player'
           url='/test1.mp4'
-          height="100vh"
-          width="100%"
           autoPlay
           muted={true}
           controls
           playsInline={true}
-          volume={0}
           style={{backgroundColor: 'black', height: '100vh', width: '100%'}}
           onEnded={() => setVideoPlayed(true)}>
               <source src={"/test1.mp4"} type="video/mp4" />
