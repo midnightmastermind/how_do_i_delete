@@ -52,7 +52,7 @@ export default function Home({letter}) {
           muted
           controls
           playsInline
-          fileConfig={{ attributes: { autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
+          fileConfig={{ attributes: { muted: true, autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
           volume={.05}
           style={{backgroundColor: 'black'}}
           onEnded={() => setVideoPlayed(true)}
