@@ -55,7 +55,7 @@ export default function Home({letter}) {
           autoplay
           playsinline
           src="/test1.mp4"
-        />,
+        />
       ` }}>
       </div>
       }
