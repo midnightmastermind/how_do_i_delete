@@ -76,6 +76,13 @@ html, body {
   animation-fill-mode: forwards;
 }
 
+@media only screen and (max-width: 640px) {
+  .App-video {
+    margin-left: -100%;
+    margin-top: -33vh;
+    zoom: 300%;
+  }
+}
 @media only screen and (max-width: 900px) {
 	.App-page {
     background-position: left center;
@@ -97,13 +104,6 @@ html, body {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
-
-  .App-video {
-    margin-left: -140px;
-    margin-top: -280px;
-    zoom: 300%;
-  }
-
 }
 .App-content {
   width: 100vw;
