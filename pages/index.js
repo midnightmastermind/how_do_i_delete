@@ -51,7 +51,7 @@ export default function Home({letter}) {
           playing
           preload=''
           playsInline={true}
-          volume={.01}
+          volume={.05}
           style={{backgroundColor: 'black'}}
           onEnded={() => setVideoPlayed(true)}
         />
