@@ -32,7 +32,9 @@ export default function Home({letter}) {
     if (isSafari() && videoParentRef.current) {
       // obtain reference to the video element
       const player = videoParentRef.current.children[0];
-
+      console.log(videoParentRef);
+      console.log(videoParentRef.current);
+      console.log(player);
       // if the reference to video player has been obtained
       if (player) {
         // set the video attributes using javascript as per the
