@@ -98,6 +98,12 @@ html, body {
     animation-fill-mode: forwards;
   }
 
+  .App-video {
+    margin-left: -140px;
+    margin-top: -280px;
+    zoom: 300%;
+  }
+
 }
 .App-content {
   width: 100vw;
@@ -770,4 +776,9 @@ p:hover::after {
 .example-three > img:nth-child(4) {
   left: 1%;
   animation: example-three-anim-2 4s infinite linear alternate-reverse;
+}
+
+.App-video {
+  height: 100vh;
+  width: 100vw;
 }

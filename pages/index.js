@@ -46,8 +46,8 @@ export default function Home({letter}) {
         <ReactPlayer
           className='react-player'
           url='/test1.mp4'
-          width='100%'
-          height='100%'
+          height="100vh"
+          width="100%"
           playing
           preload=''
           playsInline={true}
