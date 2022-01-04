@@ -50,7 +50,7 @@ export default function Home({letter}) {
           width="100%"
           playing
           playsInline
-          fileConfig={{ attributes: { autoplay: true, playsinline: true }}}
+          fileConfig={{ attributes: { playsInline: true }}}
           volume={.05}
           style={{backgroundColor: 'black'}}
           onEnded={() => setVideoPlayed(true)}
