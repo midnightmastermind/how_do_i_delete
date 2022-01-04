@@ -50,7 +50,7 @@ export default function Home({letter}) {
           width="100%"
           playing
           playsInline
-          fileConfig={{ attributes: { playsInline: true }}}
+          fileConfig={{ attributes: { autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
           volume={.05}
           style={{backgroundColor: 'black'}}
           onEnded={() => setVideoPlayed(true)}
