@@ -44,8 +44,7 @@ export default function Home({letter}) {
     { showContent && !videoPlayed &&
       <div className="App-video">
         <video
-          className='react-player'
-          url='/test1.mp4'
+          className='react-player-test'
           autoPlay
           muted={true}
           controls
