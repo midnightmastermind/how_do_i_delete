@@ -49,9 +49,9 @@ export default function Home({letter}) {
           height="100vh"
           width="100%"
           playing
-          muted
+          muted={true}
           controls
-          playsInline
+          playsInline={true}
           fileConfig={{ attributes: { muted: true, autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
           volume={.05}
           style={{backgroundColor: 'black'}}
