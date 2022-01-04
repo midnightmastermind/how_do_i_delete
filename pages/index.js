@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 import { faHome, faBus, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import applogo from '../styles/applogo2.png';
 import applogored from '../styles/applogored.png';
 import applogogreen from '../styles/applogogreen.png';
