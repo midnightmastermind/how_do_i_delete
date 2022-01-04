@@ -55,8 +55,9 @@ export default function Home({letter}) {
           controls
           autoplay
           playsinline
-          src="/test1.mp4"
-        />
+        >
+          <source src="/test1.mp4" type="video/mp4" />
+        </video>
       ` }}>
       </div>
       }
