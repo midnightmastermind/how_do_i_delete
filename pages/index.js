@@ -47,9 +47,10 @@ export default function Home({letter}) {
           className='react-player'
           url='/test1.mp4'
           width='100%'
-          height='100vh'
+          height='100%'
           playing
           preload=''
+          playsInline={true}
           volume={.01}
           style={{backgroundColor: 'black'}}
           onEnded={() => setVideoPlayed(true)}
