@@ -21,10 +21,7 @@ export default function Home({letter}) {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
-  const videoRef = useRef(undefined);
-      useEffect(() => {
-          videoRef.current.defaultMuted = true;
-      })
+
   return (
     <div className="App-page">
     { !showContent &&
@@ -46,21 +43,20 @@ export default function Home({letter}) {
     }
     { showContent && !videoPlayed &&
       <div className="App-video">
-        <ReactPlayer
+        <video
           className='react-player'
           url='/test1.mp4'
           height="100vh"
           width="100%"
-          playing={true}
+          autoPlay
           muted={true}
           controls
           playsInline={true}
-          ref={videoRef}
-          fileConfig={{ attributes: { muted: true, autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
           volume={0}
-          style={{backgroundColor: 'black'}}
-          onEnded={() => setVideoPlayed(true)}
-        />
+          style={{backgroundColor: 'black', height: '100vh', width: '100%'}}
+          onEnded={() => setVideoPlayed(true)}>
+              <source src={"/test1.mp4"} type="video/mp4" />
+        </video>
       </div>
       }
       { showContent && videoPlayed &&
