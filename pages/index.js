@@ -60,14 +60,16 @@ export default function Home({letter}) {
         <div className="App-background">
         </div>
         <div className="Landing-letter">
-          <ReactMarkdown children={letter.default}
+          <ReactMarkdown
           components={{
                // Map `h1` (`# heading`) to use `h2`s.
                h1: 'h2',
                // Rewrite `em`s (`*like so*`) to `i` with a red foreground color.
                p: ({node, ...props}) => {return <p data={props.children[0]} {...props} /> }
               }}
-            />
+            >
+            {letter.default}
+          </ReactMarkdown>
         </div>
         <div className="Landing-page-nav">
           <a className="schedule-button">Schedule</a>
