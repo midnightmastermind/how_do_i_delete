@@ -49,6 +49,7 @@ export default function Home({letter}) {
           width='100%'
           height='100vh'
           playing
+          preload=''
           volume={.01}
           style={{backgroundColor: 'black'}}
           onEnded={() => setVideoPlayed(true)}
