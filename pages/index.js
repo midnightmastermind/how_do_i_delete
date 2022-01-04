@@ -42,9 +42,9 @@ export default function Home({letter}) {
       </div>
     }
     { showContent && !videoPlayed &&
-      <div className="App-video wtf">
+      <div className="App-video">
         <ReactPlayer
-          className='react-player-test'
+          className='react-player'
           url='/test1.mp4'
           height="100vh"
           width="100%"
