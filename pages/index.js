@@ -46,9 +46,10 @@ export default function Home({letter}) {
         <video
           className='react-player-test'
           autoPlay
-          muted={true}
+          muted
+          defaultMuted
           controls
-          playsInline={true}
+          playsInline
           style={{backgroundColor: 'black', height: '100vh', width: '100%'}}
           onEnded={() => setVideoPlayed(true)}>
               <source src={"/test1.mp4"} type="video/mp4" />
