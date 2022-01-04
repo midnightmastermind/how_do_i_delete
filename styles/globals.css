@@ -1,15 +1,4 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+ @import url('https://fonts.googleapis.com/css?family=Leckerli+One&display=swap');
 
 * {
   box-sizing: border-box;
@@ -40,8 +29,8 @@ html, body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    background-color: #f7f7f7;
-    font-family: "Corbert Condensed Italic";
+    overflow-y: hidden;
+    background-color: #270483;
 }
 
 /* Scrollbar size */
@@ -65,185 +54,312 @@ html, body {
 }
 
 
-.App-pages {
-	width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
 .App-page {
 	width: 100%;
   height: 100vh;
-  background: url("background2.jpg");
-  background-position: center;
+  background: url("new_background3.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
-}
-.App-welcomescreen {
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 25px;
-    width: 400px;
-    color: white;
-    border: 1px solid white;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 15vh;
-}
-.App-content {
-	padding: 25px;
-  background: url("background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  height: 100vh;
-  margin: 0 auto;
-  width: 100%;
-}
-
-
-.LandingLinks-page .App-splashscreen {
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  z-index: 100;
-  position: fixed;
+  background-position: top;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .App-logo {
-  background: url('./applogo.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  margin-bottom: -100px;
+  height: 250px;
+  width: 250px;
+  margin-top: -30px;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
-.App-logo:hover {
-  background: url('./saddie.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@media only screen and (max-width: 900px) {
+	.App-page {
+    background-position: left center;
+	}
 }
-.Landing-links {
+
+@media only screen and (max-width: 640px) {
+	.App-page {
+    background: url("background_3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+	}
+  .App-logo {
+    height: 200px;
+    width: 200px;
+    margin-bottom: -20px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+}
+.App-content {
+  width: 100vw;
+  margin: 0 auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-background {
+  position: absolute;
+  background: url('./space.gif');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  animation: glitch 7s infinite;
+  opacity: 0;
+}
+
+@keyframes glitch {
+    0% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .2;
+    }
+    98% {
+        opacity: .2;
+    }
+    99% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.Landing-letter {
+  background: rgb(172, 59, 124);
+  margin-left: 50px;
+  padding: 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin-top: 100px;
+  border: 5px solid rgb(8, 5, 109);
+  outline: 5px solid #32CD32;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.Landing-letter * {
+  padding-bottom: 10px;
+  color: white;
+  font-family: 'Leckerli One', cursive;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+
+.Landing-letter p:first-of-type,
+.Landing-letter p:first-of-type::after {
+  display: block;
+  color: #32CD32;
+  font-size: 18px;
+  text-align: left !important;
+}
+.Landing-letter p:last-of-type,
+.Landing-letter p:last-of-type::after {
+  display: block;
+  color: #32CD32;
+  font-size: 18px;
+  text-align: right !important;
+}
+
+.Landing-letter p:first-of-type::after,
+.Landing-letter p:last-of-type::after {
+  margin-top: -25px;
+}
+.Landing-main {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  max-height: 100px;
+  top: 0px;
+  padding-top: 25px;
+}
+.Landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
 }
 .Landing-link {
-  border-radius: 10px;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.Landing-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Leckerli One', cursive;
+  font-size: 16px;
+  padding: 10px;
   color: white;
-  border: 1px solid white;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+a, a::after {
+  width: auto;
+  height: 50px;
+  border: 2px solid rgba(8, 5, 109, .6);
+  font-family: 'Leckerli One', cursive;
+  font-size: 16px;
+  background: linear-gradient(45deg, transparent 5%, #ac3b7c 5%);
+  border: 0;
+  color: #fff;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  box-shadow: 6px 0px 0px #32CD32;
+  outline: transparent;
+  position: relative;
   cursor: pointer;
   text-decoration: none;
-  padding: 10px 25px;
+}
+.onlyfans-button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.Landing-link .icon {
-  padding-right: 5px;
+.onlyfans-button::after {
+  content: "   Only Fans";
 }
-.Landing-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.insta-button::after {
+  content: "   Instagram";
 }
-.Landing-title h2 {
-  padding: 10px 0px;
+.twitter-button::after {
+  content: "   Twitter";
 }
 
+.schedule-button::after {
+  content: "   Schedule";
+}
+.contact-button::after {
+  content: "   Contact";
+}
+.video-button::after {
+  content: "   Watch Video";
+}
+.aboutme-button::after {
+  content: "   About Me";
+}
+.preview-button::after {
+  content: "   Preview";
+}
+p::after {
+  width: 650px;
+  content: attr(data);
+  max-height: 500px;
+  margin-top: -100px;
+}
+a::after,
+p::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 2px solid rgba(8, 5, 109, .6);
+  background: linear-gradient(45deg, transparent 3%, #08056d 3%, #ac3b7c 5%, #ac3b7c 5%);
+  text-shadow: -3px -3px 0px #ac3b7c, 3px 3px 0px #08056d;
+  clip-path: var(--slice-0);
+}
+
+a:hover::after,
+p:hover::after {
+  animation: 1s glitch2;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch2 {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+.icon {
+  margin-right: 5px;
+}
 .onlyfans-icon {
   background: url('./onlyfans.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 20px;
-  height: 20px;
-  color: white;
-}
-
-svg {
-  margin-right: 5px;
-}
-.Landing-contact {
-  padding: 10px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-.Landing-contact a{
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-.Landing-links {
-  margin-right: 25px;
-  padding-top: 15px;
-}
-.Landing-link {
-  background-color: rgba(0,0,0,0.3);
-}
-.Landing-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.Landing-schedule {
-  display: flex;
-  flex-direction: column;
-}
-
-.schedule-title {
-  align-self: center;
-  font-weight: bold;
-  text-decoration: underline;
-}
-table, td, th {
-  border: 1px solid white;
-  padding: 3px;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-tr:nth-child(odd) {
-  background-color: rgba(0,0,0,0.3);
-}
-
-.titles {
-  display: flex;
-}
-
-.onlyfans-title {
-  margin-top: 2px;
-}
-@media (max-width: 600px) {
-  .App-welcomescreen {
-    width: 100%;
-  }
-}
-@media (max-height: 700px) {
-  .App-welcomescreen {
-    top: 25px;
-  }
+  width: 30px;
+  height: 30px;
 }
 
 .ageVerificationContainer {
@@ -257,9 +373,14 @@ tr:nth-child(odd) {
 .ageVerification {
   padding-top: 200px;
   margin: 0 auto;
-  width: 370px;
-  font-size: 24px;
+  max-width: 700px;
+  width: 100%;
+  font-family: 'Leckerli One', cursive;
+  font-size: 36px;
   color: white;
+}
+.ageVerificationQuestion {
+  text-align: center;
 }
 .ageVerificationAnswers {
   display: flex;
@@ -268,6 +389,11 @@ tr:nth-child(odd) {
 }
 .ageVerificationAnswer {
   cursor: pointer;
+  font-family: 'Leckerli One', cursive;
+  font-size: 36px;
+  background: none;
+  border: none;
+  color: white;
 }
 .bye {
   width: 100%;
@@ -285,21 +411,363 @@ tr:nth-child(odd) {
   font-size: 24px;
 }
 
-.VideoPlayer {
-  width: 100%;
-  height: 100%;
-  background: url('./start.gif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .7;
+    }
 }
 
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
+.Landing-page-nav {
+  display: flex;
+  margin-top: 25px;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  margin-left: 50px;
 }
-/*
-.video-react {
-  height: 100% !important;
-} */
+
+.Landing-page-nav a {
+  width: 200px;
+  border: 1px solid #32CD32;
+  background: rgb(172, 59, 124);
+  color: white;
+  font-family: 'Leckerli One', cursive;
+  font-size: 16px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 6px 0px 0px #32CD32;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Landing-page-nav a::after {
+  border: none;
+}
+
+@keyframes example-three-anim-1 {
+  0% {
+    clip: rect(249px, 250px, 112px, 0);
+  }
+  2.22222% {
+    clip: rect(42px, 250px, 181px, 0);
+  }
+  4.44444% {
+    clip: rect(193px, 250px, 147px, 0);
+  }
+  6.66667% {
+    clip: rect(148px, 250px, 181px, 0);
+  }
+  8.88889% {
+    clip: rect(213px, 250px, 191px, 0);
+  }
+  11.11111% {
+    clip: rect(11px, 250px, 107px, 0);
+  }
+  13.33333% {
+    clip: rect(216px, 250px, 41px, 0);
+  }
+  15.55556% {
+    clip: rect(183px, 250px, 191px, 0);
+  }
+  17.77778% {
+    clip: rect(155px, 250px, 230px, 0);
+  }
+  20% {
+    clip: rect(220px, 250px, 48px, 0);
+  }
+  22.22222% {
+    clip: rect(251px, 250px, 149px, 0);
+  }
+  24.44444% {
+    clip: rect(159px, 250px, 25px, 0);
+  }
+  26.66667% {
+    clip: rect(132px, 250px, 254px, 0);
+  }
+  28.88889% {
+    clip: rect(77px, 250px, 159px, 0);
+  }
+  31.11111% {
+    clip: rect(161px, 250px, 253px, 0);
+  }
+  33.33333% {
+    clip: rect(42px, 250px, 188px, 0);
+  }
+  35.55556% {
+    clip: rect(172px, 250px, 64px, 0);
+  }
+  37.77778% {
+    clip: rect(57px, 250px, 90px, 0);
+  }
+  40% {
+    clip: rect(135px, 250px, 111px, 0);
+  }
+  42.22222% {
+    clip: rect(36px, 250px, 89px, 0);
+  }
+  44.44444% {
+    clip: rect(94px, 250px, 94px, 0);
+  }
+  46.66667% {
+    clip: rect(232px, 250px, 35px, 0);
+  }
+  48.88889% {
+    clip: rect(162px, 250px, 197px, 0);
+  }
+  51.11111% {
+    clip: rect(21px, 250px, 145px, 0);
+  }
+  53.33333% {
+    clip: rect(99px, 250px, 123px, 0);
+  }
+  55.55556% {
+    clip: rect(117px, 250px, 80px, 0);
+  }
+  57.77778% {
+    clip: rect(138px, 250px, 46px, 0);
+  }
+  60% {
+    clip: rect(195px, 250px, 194px, 0);
+  }
+  62.22222% {
+    clip: rect(209px, 250px, 206px, 0);
+  }
+  64.44444% {
+    clip: rect(81px, 250px, 89px, 0);
+  }
+  66.66667% {
+    clip: rect(157px, 250px, 116px, 0);
+  }
+  68.88889% {
+    clip: rect(60px, 250px, 120px, 0);
+  }
+  71.11111% {
+    clip: rect(201px, 250px, 75px, 0);
+  }
+  73.33333% {
+    clip: rect(62px, 250px, 143px, 0);
+  }
+  75.55556% {
+    clip: rect(16px, 250px, 161px, 0);
+  }
+  77.77778% {
+    clip: rect(126px, 250px, 108px, 0);
+  }
+  80% {
+    clip: rect(193px, 250px, 7px, 0);
+  }
+  82.22222% {
+    clip: rect(142px, 250px, 169px, 0);
+  }
+  84.44444% {
+    clip: rect(238px, 250px, 80px, 0);
+  }
+  86.66667% {
+    clip: rect(102px, 250px, 223px, 0);
+  }
+  88.88889% {
+    clip: rect(174px, 250px, 143px, 0);
+  }
+  91.11111% {
+    clip: rect(80px, 250px, 14px, 0);
+  }
+  93.33333% {
+    clip: rect(109px, 250px, 79px, 0);
+  }
+  95.55556% {
+    clip: rect(135px, 250px, 24px, 0);
+  }
+  97.77778% {
+    clip: rect(225px, 250px, 81px, 0);
+  }
+  100% {
+    clip: rect(22px, 250px, 119px, 0);
+  }
+}
+@keyframes example-three-anim-2 {
+  0% {
+    clip: rect(99px, 250px, 191px, 0);
+  }
+  2.22222% {
+    clip: rect(111px, 250px, 89px, 0);
+  }
+  4.44444% {
+    clip: rect(211px, 250px, 159px, 0);
+  }
+  6.66667% {
+    clip: rect(202px, 250px, 249px, 0);
+  }
+  8.88889% {
+    clip: rect(30px, 250px, 221px, 0);
+  }
+  11.11111% {
+    clip: rect(226px, 250px, 183px, 0);
+  }
+  13.33333% {
+    clip: rect(32px, 250px, 79px, 0);
+  }
+  15.55556% {
+    clip: rect(177px, 250px, 191px, 0);
+  }
+  17.77778% {
+    clip: rect(237px, 250px, 143px, 0);
+  }
+  20% {
+    clip: rect(113px, 250px, 222px, 0);
+  }
+  22.22222% {
+    clip: rect(185px, 250px, 151px, 0);
+  }
+  24.44444% {
+    clip: rect(216px, 250px, 44px, 0);
+  }
+  26.66667% {
+    clip: rect(35px, 250px, 190px, 0);
+  }
+  28.88889% {
+    clip: rect(166px, 250px, 80px, 0);
+  }
+  31.11111% {
+    clip: rect(180px, 250px, 14px, 0);
+  }
+  33.33333% {
+    clip: rect(47px, 250px, 105px, 0);
+  }
+  35.55556% {
+    clip: rect(190px, 250px, 23px, 0);
+  }
+  37.77778% {
+    clip: rect(131px, 250px, 6px, 0);
+  }
+  40% {
+    clip: rect(34px, 250px, 146px, 0);
+  }
+  42.22222% {
+    clip: rect(243px, 250px, 4px, 0);
+  }
+  44.44444% {
+    clip: rect(158px, 250px, 20px, 0);
+  }
+  46.66667% {
+    clip: rect(107px, 250px, 153px, 0);
+  }
+  48.88889% {
+    clip: rect(22px, 250px, 193px, 0);
+  }
+  51.11111% {
+    clip: rect(217px, 250px, 135px, 0);
+  }
+  53.33333% {
+    clip: rect(136px, 250px, 17px, 0);
+  }
+  55.55556% {
+    clip: rect(68px, 250px, 71px, 0);
+  }
+  57.77778% {
+    clip: rect(105px, 250px, 42px, 0);
+  }
+  60% {
+    clip: rect(145px, 250px, 68px, 0);
+  }
+  62.22222% {
+    clip: rect(101px, 250px, 57px, 0);
+  }
+  64.44444% {
+    clip: rect(59px, 250px, 47px, 0);
+  }
+  66.66667% {
+    clip: rect(225px, 250px, 162px, 0);
+  }
+  68.88889% {
+    clip: rect(145px, 250px, 99px, 0);
+  }
+  71.11111% {
+    clip: rect(204px, 250px, 72px, 0);
+  }
+  73.33333% {
+    clip: rect(134px, 250px, 212px, 0);
+  }
+  75.55556% {
+    clip: rect(82px, 250px, 6px, 0);
+  }
+  77.77778% {
+    clip: rect(47px, 250px, 212px, 0);
+  }
+  80% {
+    clip: rect(109px, 250px, 111px, 0);
+  }
+  82.22222% {
+    clip: rect(1px, 250px, 79px, 0);
+  }
+  84.44444% {
+    clip: rect(11px, 250px, 233px, 0);
+  }
+  86.66667% {
+    clip: rect(144px, 250px, 155px, 0);
+  }
+  88.88889% {
+    clip: rect(52px, 250px, 42px, 0);
+  }
+  91.11111% {
+    clip: rect(66px, 250px, 46px, 0);
+  }
+  93.33333% {
+    clip: rect(61px, 250px, 86px, 0);
+  }
+  95.55556% {
+    clip: rect(220px, 250px, 34px, 0);
+  }
+  97.77778% {
+    clip: rect(63px, 250px, 31px, 0);
+  }
+  100% {
+    clip: rect(220px, 250px, 62px, 0);
+  }
+}
+
+.example-three {
+  height: 250px;
+  width: 250px;
+}
+.example-three > img {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  transform: translate(-100px, -100px);
+  margin-top: -30px;
+}
+.example-three:hover .App-logo-glitch{
+  display: block;
+}
+.App-logo-glitch {
+  opacity: .7;
+  display: none;
+  margin-top: -100px;
+  margin-left: 100px;
+  height: 250px;
+  width: 250px;
+}
+.example-three > img:nth-child(2),
+.example-three > img:nth-child(3),
+.example-three > img:nth-child(4){
+  clip: rect(0, 0, 0, 0);
+}
+.example-three > img:nth-child(2) {
+  left: -1%;
+  animation: example-three-anim-1 2s infinite linear alternate-reverse;
+}
+.example-three > img:nth-child(3) {
+  left: 2%;
+  animation: example-three-anim-2 3s infinite linear alternate-reverse;
+}
+.example-three > img:nth-child(4) {
+  left: 1%;
+  animation: example-three-anim-2 4s infinite linear alternate-reverse;
+}
