@@ -22,6 +22,12 @@ export default function Home({letter}) {
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
 
+  useEffect(() => {
+    const myVideo = document.getElementById('myVideo');
+    if(myVideo) {
+        myVideo.addEventListener('ended',setVideoPlayed,true);
+    }
+  });
   return (
     <div className="App-page">
     { !showContent &&
@@ -42,18 +48,15 @@ export default function Home({letter}) {
       </div>
     }
     { showContent && !videoPlayed &&
-      <div className="App-video">
+      <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
-          className='react-player-test1'
-          autoPlay
+          id="myVideo"
           muted
-          defaultMuted
-          controls
-          playsInline
-          style={{backgroundColor: 'black', height: '100vh', width: '100%'}}
-          onEnded={() => setVideoPlayed(true)}>
-              <source src={"/test1.mp4"} type="video/mp4" />
-        </video>
+          autoplay
+          playsinline
+          src="/test1.mp4"
+        />,
+      ` }}>
       </div>
       }
       { showContent && videoPlayed &&

@@ -786,3 +786,9 @@ p:hover::after {
   height: 100vh;
   width: 100vw;
 }
+
+.App-video video {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
