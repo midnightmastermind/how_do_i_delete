@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 import { faHome, faBus, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import applogo from '../styles/applogo2.png';
 import applogored from '../styles/applogored.png';
 import applogogreen from '../styles/applogogreen.png';
@@ -21,7 +21,10 @@ export default function Home({letter}) {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
-
+  const videoRef = useRef(undefined);
+      useEffect(() => {
+          videoRef.current.defaultMuted = true;
+      })
   return (
     <div className="App-page">
     { !showContent &&
@@ -52,6 +55,7 @@ export default function Home({letter}) {
           muted={true}
           controls
           playsInline={true}
+          ref={videoRef}
           fileConfig={{ attributes: { muted: true, autoPlay: /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream }}}
           volume={0}
           style={{backgroundColor: 'black'}}
