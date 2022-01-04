@@ -49,8 +49,7 @@ export default function Home({letter}) {
           height="100vh"
           width="100%"
           playing
-          preload=''
-          playsInline={true}
+          playsInline
           fileConfig={{ attributes: { autoPlay: true, playsInline: true }}}
           volume={.05}
           style={{backgroundColor: 'black'}}
