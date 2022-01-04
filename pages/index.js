@@ -44,7 +44,7 @@ export default function Home({letter}) {
     { showContent && !videoPlayed &&
       <div className="App-video">
         <video
-          className='react-player-test'
+          className='react-player-test1'
           autoPlay
           muted
           defaultMuted
