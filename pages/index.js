@@ -18,7 +18,7 @@ Home.getInitialProps = async (ctx) => {
   return { letter: content}
 }
 export default function Home({letter}) {
-  const [showContent, setShowContent] = useState(false)
+  const [showContent, setShowContent] = useState(true)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
 
@@ -52,6 +52,7 @@ export default function Home({letter}) {
         <video
           id="myVideo"
           muted
+          controls
           autoplay
           playsinline
           src="/test1.mp4"
