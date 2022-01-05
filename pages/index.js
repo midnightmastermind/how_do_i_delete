@@ -12,6 +12,7 @@ import applogogreen from '../styles/applogogreen.png';
 import applogopink from '../styles/applogopink.png';
 import ReactPlayer from 'react-player';
 function isAppleSafari(userAgent){
+  console.log(userAgent);
   var iPhone = userAgent.match(/iPhone/i) !== null;
   var apple = userAgent.match(/Apple/i) !== null;
   var mac = userAgent.match(/Mac/i) !== null;
