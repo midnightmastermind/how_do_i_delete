@@ -17,16 +17,23 @@ Home.getInitialProps = async (ctx) => {
 
   return { letter: content}
 }
+
+async function grabVideo(url) {
+  let blob = await fetch(url).then(r => r.blob());
+  const videoUrl= makeURL(blob);
+  myVideo.src = videoUrl;
+}
+function makeURL(object) {
+  return (window.URL) ? window.URL.createObjectURL(object) :
+  window.webkitURL.createObjectURL(object);
+}
 export default function Home({letter}) {
   const [showContent, setShowContent] = useState(true)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
 
   useEffect(() => {
-    const myVideo = document.getElementById('myVideo');
-    if(myVideo) {
-        myVideo.addEventListener('ended',setVideoPlayed,true);
-    }
+    grabVideo('./test1.mp4')
   });
   return (
     <div className="App-page">
@@ -56,7 +63,7 @@ export default function Home({letter}) {
           controls
           autoplay
           playsinline
-          src="/test1.mp4"
+          src=""
         ></video>
       ` }}>
       </div>
