@@ -11,16 +11,7 @@ import applogored from '../styles/applogored.png';
 import applogogreen from '../styles/applogogreen.png';
 import applogopink from '../styles/applogopink.png';
 import ReactPlayer from 'react-player';
-function isAppleSafari(userAgent){
-  console.log(userAgent);
-  var iPhone = userAgent.match(/iPhone/i) !== null;
-  var apple = userAgent.match(/Apple/i) !== null;
-  var mac = userAgent.match(/Mac/i) !== null;
-  var iPod = userAgent.match(/iPod/i) !== null;
-  var iOS = userAgent.match(/iOS/i) !== null;
-  var safari = userAgent.match(/Safari/i) !== null;
-  return safari && (iPhone || apple || mac || iPod || iOS);
-}
+
 Home.getInitialProps = async (ctx) => {
   const content = await require(`../doc/letter.md`)
 
@@ -53,9 +44,9 @@ export default function Home({letter}) {
     if(myVideo) {
         myVideo.addEventListener('ended',setVideoPlayed,true);
     }
-  }, []);
+  });
   return (
-    <div className={`App-page ${isAppleSafari(navigator.userAgent) ? "iOS" : ""}`}>
+    <div className={`App-page`}>
     { !showContent &&
       <div className="ageVerificationContainer">
         {question && <div className="ageVerification">
