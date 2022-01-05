@@ -68,6 +68,7 @@ export default function Home({letter}) {
       <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
           id="myVideo"
+          preload="auto"
           muted={true}
           playsinline
           src=""
