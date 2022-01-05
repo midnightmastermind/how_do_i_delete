@@ -75,17 +75,13 @@ html, body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-/* @supports (-webkit-touch-callout: none) {
+@supports (-webkit-touch-callout: none) {
    .App-video {
      margin-top: -3vh !important;
    }
-} */
+}
 @media only screen and (max-width: 640px) {
-  .App-video {
-    margin-left: -100%;
-    margin-top: -33vh;
-    zoom: 300%;
-  }
+
 }
 @media only screen and (max-width: 900px) {
 	.App-page {
@@ -784,12 +780,14 @@ p:hover::after {
 
 .App-video {
   position: absolute;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
 }
 
 .App-video video {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: black;
 }
