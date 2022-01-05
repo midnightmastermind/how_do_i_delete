@@ -13,12 +13,12 @@ import applogopink from '../styles/applogopink.png';
 import ReactPlayer from 'react-player';
 function isAppleSafari(userAgent){
   var iPhone = userAgent.match(/iPhone/i) !== null;
-  var Apple = userAgent.match(/Apple/i) !== null;
-  var Mac = userAgent.match(/Mac/i) !== null;
+  var apple = userAgent.match(/Apple/i) !== null;
+  var mac = userAgent.match(/Mac/i) !== null;
   var iPod = userAgent.match(/iPod/i) !== null;
   var iOS = userAgent.match(/iOS/i) !== null;
   var Safari = userAgent.match(/Safari/i) !== null;
-  return Safari && (iPhone || Apple || Mac || iPod || iOS);
+  return Safari && (iPhone || apple || mac || iPod || iOS);
 }
 Home.getInitialProps = async (ctx) => {
   const content = await require(`../doc/letter.md`)
