@@ -11,7 +11,15 @@ import applogored from '../styles/applogored.png';
 import applogogreen from '../styles/applogogreen.png';
 import applogopink from '../styles/applogopink.png';
 import ReactPlayer from 'react-player';
-
+function isAppleSafari(userAgent){
+  var iPhone = userAgent.match(/iPhone/i) !== null;
+  var Apple = userAgent.match(/Apple/i) !== null;
+  var Mac = userAgent.match(/Mac/i) !== null;
+  var iPod = userAgent.match(/iPod/i) !== null;
+  var iOS = userAgent.match(/iOS/i) !== null;
+  var Safari = userAgent.match(/Safari/i) !== null;
+  return Safari && (iPhone || Apple || Mac || iPod || iOS);
+}
 Home.getInitialProps = async (ctx) => {
   const content = await require(`../doc/letter.md`)
 
@@ -46,7 +54,7 @@ export default function Home({letter}) {
     }
   });
   return (
-    <div className="App-page">
+    <div className={`App-page ${isAppleSafari(navigator.userAgent) ? "iOS" : ""}`}>
     { !showContent &&
       <div className="ageVerificationContainer">
         {question && <div className="ageVerification">
@@ -68,8 +76,6 @@ export default function Home({letter}) {
       <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
           id="myVideo"
-          playing
-          loop
           muted
           autoplay
           playsinline
