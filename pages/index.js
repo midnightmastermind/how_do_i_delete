@@ -68,9 +68,7 @@ export default function Home({letter}) {
       <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
           id="myVideo"
-          muted
-          loop
-          autoplay
+          muted={true}
           playsinline
           src=""
         ></video>
