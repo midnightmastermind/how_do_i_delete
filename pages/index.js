@@ -54,7 +54,7 @@ export default function Home({letter}) {
     }
   });
   return (
-    <div className={`App-page ${isAppleSafari(navigator.userAgent) ? "iOS" : ""}`}>
+    <div className={`App-page`}>
     { !showContent &&
       <div className="ageVerificationContainer">
         {question && <div className="ageVerification">
