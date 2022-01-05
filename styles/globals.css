@@ -76,7 +76,7 @@ html, body {
   animation-fill-mode: forwards;
 }
 @supports (-webkit-touch-callout: none) {
-   #myvideo {
+   #myVideo {
      transform: scale(3);
      margin-left: 0px;
      margin-right: 0px;
