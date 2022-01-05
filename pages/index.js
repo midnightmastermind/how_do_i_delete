@@ -17,8 +17,8 @@ function isAppleSafari(userAgent){
   var mac = userAgent.match(/Mac/i) !== null;
   var iPod = userAgent.match(/iPod/i) !== null;
   var iOS = userAgent.match(/iOS/i) !== null;
-  var Safari = userAgent.match(/Safari/i) !== null;
-  return Safari && (iPhone || apple || mac || iPod || iOS);
+  var safari = userAgent.match(/Safari/i) !== null;
+  return safari && (iPhone || apple || mac || iPod || iOS);
 }
 Home.getInitialProps = async (ctx) => {
   const content = await require(`../doc/letter.md`)
