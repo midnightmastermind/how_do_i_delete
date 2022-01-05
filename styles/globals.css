@@ -95,7 +95,7 @@ html, body {
 
 @media only screen and (max-width: 640px) {
 	.App-page {
-    background: url("background_3.jpg");
+    background-color: #270483;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
