@@ -19,9 +19,13 @@ Home.getInitialProps = async (ctx) => {
 }
 
 async function grabVideo(url) {
-  let blob = await fetch(url).then(r => r.blob());
-  const videoUrl= makeURL(blob);
-  myVideo.src = videoUrl;
+  const myVideo = document.getElementById('myVideo');
+
+  if(myVideo) {
+    let blob = await fetch(url).then(r => r.blob());
+    const videoUrl= makeURL(blob);
+    myVideo.src = videoUrl;
+  }
 }
 function makeURL(object) {
   return (window.URL) ? window.URL.createObjectURL(object) :
@@ -34,6 +38,11 @@ export default function Home({letter}) {
 
   useEffect(() => {
     grabVideo('./test1.mp4')
+    const myVideo = document.getElementById('myVideo');
+
+    if(myVideo) {
+        myVideo.addEventListener('ended',setVideoPlayed,true);
+    }
   });
   return (
     <div className="App-page">
