@@ -25,6 +25,7 @@ async function grabVideo(url) {
     let blob = await fetch(url).then(r => r.blob());
     const videoUrl= makeURL(blob);
     myVideo.src = videoUrl;
+    myVideo.play();
   }
 }
 function makeURL(object) {
@@ -32,7 +33,7 @@ function makeURL(object) {
   window.webkitURL.createObjectURL(object);
 }
 export default function Home({letter}) {
-  const [showContent, setShowContent] = useState(true)
+  const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
 
@@ -67,9 +68,8 @@ export default function Home({letter}) {
       <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
           id="myVideo"
-          preload="auto"
+          playing
           muted
-          controls
           autoplay
           playsinline
           src=""
