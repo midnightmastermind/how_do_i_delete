@@ -52,9 +52,9 @@ export default function Home({letter}) {
     if(myVideo) {
         myVideo.addEventListener('ended',setVideoPlayed,true);
     }
-  });
+  }, []);
   return (
-    <div className={`App-page`}>
+    <div className={`App-page ${isAppleSafari(navigator.userAgent) ? "iOS" : ""}`}>
     { !showContent &&
       <div className="ageVerificationContainer">
         {question && <div className="ageVerification">
