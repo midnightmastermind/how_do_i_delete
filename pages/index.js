@@ -69,6 +69,7 @@ export default function Home({letter}) {
         <video
           id="myVideo"
           muted
+          loop
           autoplay
           playsinline
           src=""

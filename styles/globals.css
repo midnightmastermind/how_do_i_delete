@@ -85,16 +85,12 @@ html, body {
 }
 @media only screen and (max-width: 1200px) {
   #myVideo {
-    transform: scale(6);
-    margin-left: 150vw;
-    margin-top: 150vh;
+    transform: scale(1.5);
   }
 }
 @media only screen and (max-width: 640px) {
   #myVideo {
-    transform: scale(12);
-    margin-left: 150vw;
-    margin-top: 150vh;
+    transform: scale(3);
   }
 }
 @media only screen and (max-width: 900px) {
@@ -793,6 +789,8 @@ p:hover::after {
 }
 
 .App-video {
+  height: 100%;
+  width: 100%;
 }
 
 .App-video video {
