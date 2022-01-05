@@ -79,6 +79,7 @@ html, body {
    #myVideo {
      transform: scale(3);
      margin-left: 0px;
+     margin-top: -33vh;
      margin-right: 0px;
    }
 }
@@ -792,11 +793,6 @@ p:hover::after {
 }
 
 .App-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
 }
 
 .App-video video {
