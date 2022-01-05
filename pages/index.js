@@ -26,7 +26,6 @@ export default function Home({letter}) {
     const myVideo = document.getElementById('myVideo');
     if(myVideo) {
         myVideo.addEventListener('ended',setVideoPlayed,true);
-        setTimeout(function(){ myVideo.play();})
     }
   });
   return (
@@ -52,6 +51,7 @@ export default function Home({letter}) {
       <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
           id="myVideo"
+          preload="auto"
           muted
           controls
           autoplay
