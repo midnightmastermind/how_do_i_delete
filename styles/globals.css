@@ -870,21 +870,20 @@ p:hover::after {
     height: 100px;
     width: 100px;
   }
+
+  .App-page {
+    background-position: left center;
+  }
 }
 @media only screen and (max-width: 640px) {
   #myVideo {
     transform: scale(3);
   }
 }
-@media only screen and (max-width: 900px) {
-	.App-page {
-    background-position: left center;
-	}
-}
 
 @media only screen and (max-width: 640px) {
 	.App-page {
-    background-color: #270483;
+    background: url("background_3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
