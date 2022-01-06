@@ -35,7 +35,7 @@ function makeURL(object) {
 export default function Home({letter}) {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
-  const [videoPlayed, setVideoPlayed] = useState(true)
+  const [videoPlayed, setVideoPlayed] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
