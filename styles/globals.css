@@ -62,7 +62,7 @@ button {
 }
 
 .App-page {
-  height: 100%;
+  height: 100vh;
   background: url("new_background3.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
