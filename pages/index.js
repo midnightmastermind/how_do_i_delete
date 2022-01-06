@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown';
 import styles from '../styles/Home.module.css';
-import { faHome, faBus, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faBus, faPhone, faEnvelope, faBars, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useRef, useEffect } from 'react';
@@ -25,7 +25,7 @@ async function grabVideo(url) {
     let blob = await fetch(url).then(r => r.blob());
     const videoUrl= makeURL(blob);
     myVideo.src = videoUrl;
-    myVideo.play();
+    const test = myVideo.play();
   }
 }
 function makeURL(object) {
@@ -35,7 +35,8 @@ function makeURL(object) {
 export default function Home({letter}) {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
-  const [videoPlayed, setVideoPlayed] = useState(false)
+  const [videoPlayed, setVideoPlayed] = useState(true)
+  const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
     grabVideo('./test1.mp4')
@@ -80,41 +81,77 @@ export default function Home({letter}) {
       <div className="App-content">
         <div className="App-background">
         </div>
-        <div className="Landing-letter">
-          <ReactMarkdown
-          components={{
-               // Map `h1` (`# heading`) to use `h2`s.
-               h1: 'h2',
-               // Rewrite `em`s (`*like so*`) to `i` with a red foreground color.
-               p: ({node, ...props}) => {return <p data={props.children[0]} {...props} /> }
-              }}
-            >
-            {letter.default}
-          </ReactMarkdown>
-        </div>
-        <div className="Landing-page-nav">
-          <a className="schedule-button">Schedule</a>
-          <a className="aboutme-button">About Me</a>
-          <a className="contact-button">Contact</a>
-          <a className="preview-button">Preview</a>
-          <a className="video-button" onClick={() => setVideoPlayed(false)}>Watch Video</a>
-        </div>
-        <div className="Landing-main">
-          <div className="example-three">
-            <img src={applogo.src} alt="logo" className="App-logo" />
-              <img src={applogored.src} alt="logo" className="App-logo App-logo-glitch" />
-                <img src={applogogreen.src} alt="logo" className="App-logo  App-logo-glitch" />
-                  <img src={applogopink.src} alt="logo" className="App-logo  App-logo-glitch" />
+        <div className={`Mobile-menu ${!showMenu ? 'Mobile-menu-closed' : ''}`}>
+          <button className="close-button" onClick={() => setShowMenu(false)}>
+            <FontAwesomeIcon className="icon" icon={faArrowLeft}/>
+          </button>
+          <div className="Mobile-menu-nav">
+            <a className="menu-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
+            <a className="menu-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+            <a className="menu-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+            <a className="menu-item">
+              Schedule
+            </a>
+            <a className="menu-item">
+              About Me
+            </a>
+            <a className="menu-item">
+              Contact
+            </a>
+            <a className="menu-item">
+              Preview
+            </a>
+            <a className="menu-item">
+              Watch Video
+            </a>
           </div>
-          <div className="Landing-container">
-            <div className="Landing-link">
-              <a className="onlyfans-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
+        </div>
+        <div className="Landing-content">
+          <div className="Landing-letter">
+            <ReactMarkdown
+            components={{
+                 // Map `h1` (`# heading`) to use `h2`s.
+                 h1: 'h2',
+                 // Rewrite `em`s (`*like so*`) to `i` with a red foreground color.
+                 p: ({node, ...props}) => {return <p data={props.children[0]} {...props} /> }
+                }}
+              >
+              {letter.default}
+            </ReactMarkdown>
+          </div>
+          <div className="Landing-page-nav">
+            <div className="nav-left">
+              <a className="schedule-button">Schedule</a>
+              <a className="aboutme-button">About Me</a>
+              <a className="contact-button">Contact</a>
             </div>
-            <div className="Landing-link">
-              <a className="insta-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+            <div className="nav-right">
+              <a className="preview-button">Preview</a>
+              <a className="video-button" onClick={() => setVideoPlayed(false)}>Watch Video</a>
             </div>
-            <div className="Landing-link">
-              <a className="twitter-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+          </div>
+          <div className="Landing-main">
+            <div className="Top-menu">
+            <button className="Mobile-button" onClick={() => setShowMenu(true)}>
+              <FontAwesomeIcon className="icon" icon={faBars}/>
+            </button>
+              <div className="App-logo-container">
+                <img src={applogo.src} alt="logo" className="App-logo" />
+                  <img src={applogored.src} alt="logo" className="App-logo App-logo-glitch" />
+                    <img src={applogogreen.src} alt="logo" className="App-logo  App-logo-glitch" />
+                      <img src={applogopink.src} alt="logo" className="App-logo  App-logo-glitch" />
+              </div>
+              <div className="Landing-container">
+                <div className="Landing-link">
+                  <a className="onlyfans-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
+                </div>
+                <div className="Landing-link">
+                  <a className="insta-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+                </div>
+                <div className="Landing-link">
+                  <a className="twitter-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

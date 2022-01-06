@@ -16,13 +16,6 @@
   overflow-x: hidden;
 }
 
-@media only screen and (max-width: 700px) {
-	.App-splashscreen {
-		background-position-x: -45px;
-	}
-
-}
-
 html, body {
     width: 100%;
     height: 100%;
@@ -33,6 +26,9 @@ html, body {
     background-color: #270483;
 }
 
+button {
+  cursor: pointer;
+}
 /* Scrollbar size */
 ::-webkit-scrollbar {
     width: 5px; /* To change vertical scrollbar width */
@@ -52,11 +48,21 @@ html, body {
 ::-webkit-scrollbar-corner{
     background-color: transparent;
 }
-
+/*
+  Animation CSS
+  -------------
+*/
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .7;
+    }
+}
 
 .App-page {
-	width: 100%;
-  height: 100vh;
+  height: 100%;
   background: url("new_background3.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -65,55 +71,6 @@ html, body {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-}
-
-.App-logo {
-  height: 250px;
-  width: 250px;
-  margin-top: -30px;
-  animation: fadeInAnimation ease 3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@supports (-webkit-touch-callout: none) {
-   #myVideo {
-     transform: scale(3);
-     margin-left: 0px;
-     margin-top: -7vh;
-     margin-right: 0px;
-   }
-}
-@media only screen and (max-width: 1200px) {
-  #myVideo {
-    transform: scale(1.5);
-  }
-}
-@media only screen and (max-width: 640px) {
-  #myVideo {
-    transform: scale(3);
-  }
-}
-@media only screen and (max-width: 900px) {
-	.App-page {
-    background-position: left center;
-	}
-}
-
-@media only screen and (max-width: 640px) {
-	.App-page {
-    background-color: #270483;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-	}
-  .App-logo {
-    height: 200px;
-    width: 200px;
-    margin-bottom: -20px;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
 }
 .App-content {
   width: 100vw;
@@ -159,7 +116,7 @@ html, body {
 
 .Landing-letter {
   background: rgb(172, 59, 124);
-  margin-left: 50px;
+  margin: 0 auto;
   padding: 20px;
   align-self: center;
   display: flex;
@@ -202,21 +159,25 @@ html, body {
   margin-top: -25px;
 }
 .Landing-main {
-  position: fixed;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0px;
+  left: 0px;
+}
+.Top-menu {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  min-width: 1200px;
+  max-width: 1300px;
   width: 100%;
-  max-width: 1200px;
-  height: 100vh;
-  max-height: 100px;
-  top: 0px;
-  padding-top: 25px;
+  margin: 0 auto;
 }
 .Landing-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  align-self: flex-end;
   padding-left: 10px;
 }
 .Landing-link {
@@ -366,6 +327,7 @@ p:hover::after {
   }
 }
 
+/* Icons CSS */
 .icon {
   margin-right: 5px;
 }
@@ -378,6 +340,8 @@ p:hover::after {
   height: 30px;
 }
 
+
+/* Age Warning Question Page CSS */
 .ageVerificationContainer {
   width: 100%;
   height: 100%;
@@ -426,26 +390,17 @@ p:hover::after {
   color: white;
   font-size: 24px;
 }
-
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: .7;
-    }
-}
-
+/*
+  Internal Nav CSS
+*/
 .Landing-page-nav {
   display: flex;
   margin-top: 25px;
   flex-direction: row;
-  justify-content: space-around;
   width: 100%;
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  margin-left: 50px;
 }
 
 .Landing-page-nav a {
@@ -461,13 +416,37 @@ p:hover::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 25px;
 }
 
+.nav-left,
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .Landing-page-nav a::after {
   border: none;
 }
+/*
+  Beginning Video CSS
+  -------------------
+*/
+.App-video {
+  height: 100%;
+  width: 100%;
+}
 
-@keyframes example-three-anim-1 {
+.App-video video {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+/*
+  Top-bar (logo and external links) CSS
+  ---------------------
+*/
+@keyframes App-logo-container-anim-1 {
   0% {
     clip: rect(249px, 250px, 112px, 0);
   }
@@ -607,7 +586,7 @@ p:hover::after {
     clip: rect(22px, 250px, 119px, 0);
   }
 }
-@keyframes example-three-anim-2 {
+@keyframes App-logo-container-anim-2 {
   0% {
     clip: rect(99px, 250px, 191px, 0);
   }
@@ -748,53 +727,220 @@ p:hover::after {
   }
 }
 
-.example-three {
-  height: 250px;
-  width: 250px;
+.App-logo {
+  height: 200px;
+  width: 200px;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
-.example-three > img {
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  transform: translate(-100px, -100px);
-  margin-top: -30px;
+
+.App-logo-container {
+  height: 200px;
+  width: 200px;
+  position: relative;
 }
-.example-three:hover .App-logo-glitch{
+
+.App-logo-container:hover .App-logo-glitch{
   display: block;
 }
-.App-logo-glitch {
+.App-logo-container .App-logo-glitch {
   opacity: .7;
+  transform: translate(-100px, -100px);
+  position: absolute;
   display: none;
-  margin-top: -100px;
+  height: 200px;
+  width: 200px;
+  top: 100px;
   margin-left: 100px;
-  height: 250px;
-  width: 250px;
 }
-.example-three > img:nth-child(2),
-.example-three > img:nth-child(3),
-.example-three > img:nth-child(4){
+.App-logo-container > img:nth-child(2),
+.App-logo-container > img:nth-child(3),
+.App-logo-container > img:nth-child(4){
   clip: rect(0, 0, 0, 0);
 }
-.example-three > img:nth-child(2) {
-  left: -1%;
-  animation: example-three-anim-1 2s infinite linear alternate-reverse;
+.App-logo-container > img:nth-child(2) {
+  left: -2%;
+  animation: App-logo-container-anim-1 2s infinite linear alternate-reverse;
 }
-.example-three > img:nth-child(3) {
+.App-logo-container > img:nth-child(3) {
+  left: 4%;
+  animation: App-logo-container-anim-2 3s infinite linear alternate-reverse;
+}
+.App-logo-container > img:nth-child(4) {
   left: 2%;
-  animation: example-three-anim-2 3s infinite linear alternate-reverse;
+  animation: App-logo-container-anim-2 4s infinite linear alternate-reverse;
 }
-.example-three > img:nth-child(4) {
-  left: 1%;
-  animation: example-three-anim-2 4s infinite linear alternate-reverse;
+/*
+  Mobile Burger Menu CSS
+  ---------------------
+*/
+
+.Mobile-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #32CD32;
+  background: rgb(172, 59, 124);
+  height: 100%;
+  z-index: 1;
+  width: 300px;
+  transition: 0.5s;
 }
 
-.App-video {
-  height: 100%;
-  width: 100%;
+.Mobile-menu-closed {
+  width: 0px;
+}
+.Mobile-menu-closed * {
+  display: none !important;
+}
+.Mobile-button {
+  display: none;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  background: transparent;
+  color: white;
+  border: none;
 }
 
-.App-video video {
-  height: 100%;
-  width: 100%;
-  background-color: black;
+.Mobile-button .icon {
+  height: 25px;
+  width: 25px;
+}
+
+.close-button {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+.close-button .icon {
+  height: 25px;
+  width: 25px;
+}
+.Mobile-menu-nav {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+.Mobile-menu-nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Mobile-menu-nav a:hover {
+  opacity: .6;
+}
+/*
+  Responsive Mobile CSS
+  ---------------------
+*/
+
+@media only screen and (max-width: 1200px) {
+  #myVideo {
+    transform: scale(1.5);
+  }
+  .Mobile-button {
+    display: block;
+  }
+
+  .Landing-container {
+    display: none;
+  }
+
+  .Landing-page-nav {
+    display: none;
+  }
+  .App-logo {
+    height: 100px;
+    width: 100px;
+  }
+  .App-logo-container {
+    height: 100px;
+    width: 100px;
+  }
+  .Top-menu {
+    justify-content: flex-end;
+  }
+  .Top-menu {
+    min-width: 0px;
+  }
+  .App-logo-container .App-logo-glitch {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  #myVideo {
+    transform: scale(3);
+  }
+}
+@media only screen and (max-width: 900px) {
+	.App-page {
+    background-position: left center;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.App-page {
+    background-color: #270483;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+	}
+}
+@media only screen and (max-width: 1400px) and (max-height: 800px) {
+  .nav-left {
+    position: absolute;
+    left: 25px;
+    bottom: 0px;
+    flex-direction: column;
+    height: 200px;
+  }
+
+  .nav-right {
+    position: absolute;
+    right: 25px;
+    bottom: 0px;
+    height: 150px;
+    flex-direction: column;
+  }
+
+}
+@media only screen and (min-width: 1401px) and (max-height: 800px) {
+  .nav-left {
+    position: absolute;
+    left: 100px;
+    bottom: 0px;
+    flex-direction: column;
+    height: 200px;
+  }
+
+  .nav-right {
+    position: absolute;
+    right: 100px;
+    bottom: 0px;
+    height: 150px;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+	.App-splashscreen {
+		background-position-x: -45px;
+	}
+  .Landing-content {
+      overflow-x: scroll;
+  }
+}
+
+/* IOS CSS */
+@supports (-webkit-touch-callout: none) {
+   #myVideo {
+     transform: scale(3);
+     margin-left: 0px;
+     margin-top: -7vh;
+     margin-right: 0px;
+   }
 }
