@@ -57,10 +57,18 @@ button {
         opacity: 0;
     }
     100% {
-        opacity: .7;
+        opacity: .6;
     }
 }
 
+@keyframes fadeInAnimation2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .App-page {
   height: 100vh;
   background: url("new_background3.jpg");
@@ -129,14 +137,18 @@ button {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  z-index: 2;
+  position: relative;
 }
 .Landing-letter * {
   padding-bottom: 10px;
-  color: white;
   font-family: 'Leckerli One', cursive;
   font-size: 14px;
   text-align: center;
   width: 100%;
+  animation: fadeInAnimation2 ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .Landing-letter p:first-of-type,
@@ -158,12 +170,54 @@ button {
 .Landing-letter p:last-of-type::after {
   margin-top: -25px;
 }
+
+.Landing-schedule {
+  background: rgb(172, 59, 124);
+  margin: 0 auto;
+  padding: 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 700px;
+  margin-top: 100px;
+  border: 5px solid rgb(8, 5, 109);
+  outline: 5px solid #32CD32;
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.Landing-schedule strong {
+  color: #32CD32;
+  font-size: 14px !important;
+}
+.Landing-schedule em strong {
+  color: white;
+  font-size: 14px !important;
+}
+.Landing-schedule h1 {
+  font-family: 'Leckerli One', cursive;
+}
+.Landing-schedule p {
+  padding-bottom: 10px;
+  font-family: 'Leckerli One', cursive;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+}
+.Landing-schedule p {
+  animation: fadeInAnimation2 ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 .Landing-main {
   position: absolute;
   width: 100%;
   height: auto;
   top: 0px;
   left: 0px;
+  z-index: 0;
 }
 .Top-menu {
   display: flex;
@@ -200,7 +254,6 @@ button {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
 
 a, a::after {
   width: auto;
@@ -249,12 +302,31 @@ a, a::after {
 .preview-button::after {
   content: "   Preview";
 }
+h1::after {
+  content: attr(data);
+}
 p::after {
   width: 650px;
   content: attr(data);
-  max-height: 500px;
+  font-size: 14px;
+}
+.Landing-letter p::after {
   margin-top: -100px;
 }
+
+.Landing-schedule h1::after {
+  margin-top: -30px;
+}
+.Landing-schedule p::after {
+  margin-top: -30px;
+  width: 650px;
+  max-width: 650px;
+  max-height: 100px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+h1::after,
 a::after,
 p::after {
   --slice-0: inset(50% 50% 50% 50%);
@@ -273,7 +345,7 @@ p::after {
   text-shadow: -3px -3px 0px #ac3b7c, 3px 3px 0px #08056d;
   clip-path: var(--slice-0);
 }
-
+h1:hover::after,
 a:hover::after,
 p:hover::after {
   animation: 1s glitch2;
@@ -783,7 +855,7 @@ p:hover::after {
   border: 1px solid #32CD32;
   background: rgb(172, 59, 124);
   height: 100%;
-  z-index: 1;
+  z-index: 4;
   width: 300px;
   transition: 0.5s;
 }
@@ -929,11 +1001,39 @@ p:hover::after {
 	.App-splashscreen {
 		background-position-x: -45px;
 	}
-  .Landing-content {
+
+  .App-page {
       overflow-x: scroll;
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .Landing-letter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    max-height: 100vh;
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+
+  .Landing-schedule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    max-height: 100vh;
+    max-width: 100%;
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .App-page {
+      overflow-x: scroll;
+  }
+}
 /* IOS CSS */
 @supports (-webkit-touch-callout: none) {
    #myVideo {

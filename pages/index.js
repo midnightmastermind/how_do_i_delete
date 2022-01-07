@@ -13,9 +13,11 @@ import applogopink from '../styles/applogopink.png';
 import ReactPlayer from 'react-player';
 
 Home.getInitialProps = async (ctx) => {
-  const content = await require(`../doc/letter.md`)
-
-  return { letter: content}
+  const letter = await require(`../doc/letter.md`)
+  console.log(letter);
+  const schedule = await require(`../doc/schedule.md`)
+  console.log(schedule);
+  return { letter: letter, schedule: schedule }
 }
 
 async function grabVideo(url) {
@@ -32,11 +34,12 @@ function makeURL(object) {
   return (window.URL) ? window.URL.createObjectURL(object) :
   window.webkitURL.createObjectURL(object);
 }
-export default function Home({letter}) {
+export default function Home({letter, schedule}) {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const [content, setContent] = useState("letter")
 
   useEffect(() => {
     grabVideo('./test1.mp4')
@@ -44,6 +47,7 @@ export default function Home({letter}) {
 
     if(myVideo) {
         myVideo.addEventListener('ended',setVideoPlayed,true);
+        myVideo.muted = !myVideo.muted;
     }
   });
   return (
@@ -89,10 +93,10 @@ export default function Home({letter}) {
             <a className="menu-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
             <a className="menu-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
             <a className="menu-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
-            <a className="menu-item">
+            <a className="menu-item" onClick={() => { setContent("schedule"); setShowMenu(false);}}>
               Schedule
             </a>
-            <a className="menu-item">
+            <a className="menu-item" onClick={() => { setContent("letter"); setShowMenu(false); }}>
               About Me
             </a>
             <a className="menu-item">
@@ -101,28 +105,27 @@ export default function Home({letter}) {
             <a className="menu-item">
               Preview
             </a>
-            <a className="menu-item">
+            <a className="menu-item" onClick={() => { setVideoPlayed(false); setShowMenu(false); }}>
               Watch Video
             </a>
           </div>
         </div>
         <div className="Landing-content">
-          <div className="Landing-letter">
+          <div className={`Landing-${content}`}>
             <ReactMarkdown
             components={{
-                 // Map `h1` (`# heading`) to use `h2`s.
-                 h1: 'h2',
                  // Rewrite `em`s (`*like so*`) to `i` with a red foreground color.
-                 p: ({node, ...props}) => {return <p data={props.children[0]} {...props} /> }
+                 p: ({node, ...props}) => {return <p data={props.children[0]} {...props} /> },
+                 h1: ({node, ...props}) => {return <h1 data={props.children[0]} {...props} /> }
                 }}
               >
-              {letter.default}
+              {eval(content).default}
             </ReactMarkdown>
           </div>
           <div className="Landing-page-nav">
             <div className="nav-left">
-              <a className="schedule-button">Schedule</a>
-              <a className="aboutme-button">About Me</a>
+              <a className="aboutme-button" onClick={() => setContent("letter")}>About Me</a>
+              <a className="schedule-button" onClick={() => setContent("schedule")} >Schedule</a>
               <a className="contact-button">Contact</a>
             </div>
             <div className="nav-right">
