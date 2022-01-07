@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown';
 import styles from '../styles/Home.module.css';
 import { faHome, faBus, faPhone, faEnvelope, faBars, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faInstagram, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faGithub, faTwitter, faAmazon, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useRef, useEffect } from 'react';
 import applogo from '../styles/applogo2.png';
@@ -14,10 +14,10 @@ import ReactPlayer from 'react-player';
 
 Home.getInitialProps = async (ctx) => {
   const letter = await require(`../doc/letter.md`)
-  console.log(letter);
   const schedule = await require(`../doc/schedule.md`)
-  console.log(schedule);
-  return { letter: letter, schedule: schedule }
+  const collab = await require(`../doc/collab.md`)
+  const aboutme = await require(`../doc/aboutme.md`)
+  return { letter: letter, schedule: schedule, collab: collab, aboutme: aboutme }
 }
 
 async function grabVideo(url) {
@@ -34,7 +34,7 @@ function makeURL(object) {
   return (window.URL) ? window.URL.createObjectURL(object) :
   window.webkitURL.createObjectURL(object);
 }
-export default function Home({letter, schedule}) {
+export default function Home({letter, schedule, collab, aboutme}) {
   const [showContent, setShowContent] = useState(false)
   const [question, setQuestion] = useState(true)
   const [videoPlayed, setVideoPlayed] = useState(false)
@@ -93,18 +93,17 @@ export default function Home({letter, schedule}) {
             <a className="menu-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
             <a className="menu-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
             <a className="menu-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+            <a className="tiktok-button" color="inherit" href="https://vm.tiktok.com/TTPdMBu299/"><FontAwesomeIcon className="icon" icon={faTiktok}/>TikTok</a>
             <a className="menu-item" onClick={() => { setContent("schedule"); setShowMenu(false);}}>
               Schedule
             </a>
-            <a className="menu-item" onClick={() => { setContent("letter"); setShowMenu(false); }}>
+            <a className="menu-item" onClick={() => { setContent("aboutme"); setShowMenu(false); }}>
               About Me
             </a>
-            <a className="menu-item">
-              Contact
+            <a className="menu-item"  onClick={() => { setContent("collab"); setShowMenu(false); }}>
+              Collab
             </a>
-            <a className="menu-item">
-              Preview
-            </a>
+            <a className="menu-item" color="inherit" href="https://www.amazon.com/hz/wishlist/ls/31QHJLK01C33M?ref_=wl_share"><FontAwesomeIcon className="icon" icon={faAmazon}/>Buy Me Shit</a>
             <a className="menu-item" onClick={() => { setVideoPlayed(false); setShowMenu(false); }}>
               Watch Video
             </a>
@@ -124,12 +123,12 @@ export default function Home({letter, schedule}) {
           </div>
           <div className="Landing-page-nav">
             <div className="nav-left">
-              <a className="aboutme-button" onClick={() => setContent("letter")}>About Me</a>
+              <a className="aboutme-button" onClick={() => setContent("aboutme")}>About Me</a>
               <a className="schedule-button" onClick={() => setContent("schedule")} >Schedule</a>
-              <a className="contact-button">Contact</a>
+              <a className="contact-button" onClick={() => setContent("collab")}>Collab</a>
             </div>
             <div className="nav-right">
-              <a className="preview-button">Preview</a>
+              <a className="amazon-button" color="inherit" href="https://www.amazon.com/hz/wishlist/ls/31QHJLK01C33M?ref_=wl_share"><FontAwesomeIcon className="icon" icon={faAmazon}/>Buy Me Shit</a>
               <a className="video-button" onClick={() => setVideoPlayed(false)}>Watch Video</a>
             </div>
           </div>
@@ -138,7 +137,7 @@ export default function Home({letter, schedule}) {
             <button className="Mobile-button" onClick={() => setShowMenu(true)}>
               <FontAwesomeIcon className="icon" icon={faBars}/>
             </button>
-              <div className="App-logo-container">
+              <div className="App-logo-container" onClick={() => setContent("letter")}>
                 <img src={applogo.src} alt="logo" className="App-logo" />
                   <img src={applogored.src} alt="logo" className="App-logo App-logo-glitch" />
                     <img src={applogogreen.src} alt="logo" className="App-logo  App-logo-glitch" />
@@ -153,6 +152,9 @@ export default function Home({letter, schedule}) {
                 </div>
                 <div className="Landing-link">
                   <a className="twitter-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
+                </div>
+                <div className="Landing-link">
+                  <a className="tiktok-button" color="inherit" href="https://vm.tiktok.com/TTPdMBu299/"><FontAwesomeIcon className="icon" icon={faTiktok}/>TikTok</a>
                 </div>
               </div>
             </div>

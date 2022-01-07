@@ -171,6 +171,8 @@ button {
   margin-top: -25px;
 }
 
+.Landing-collab,
+.Landing-aboutme,
 .Landing-schedule {
   background: rgb(172, 59, 124);
   margin: 0 auto;
@@ -196,6 +198,8 @@ button {
   color: white;
   font-size: 14px !important;
 }
+.Landing-collab h1,
+.Landing-aboutme h1,
 .Landing-schedule h1 {
   font-family: 'Leckerli One', cursive;
 }
@@ -232,6 +236,7 @@ button {
   flex-direction: column;
   align-items: flex-start;
   align-self: flex-end;
+  padding-top: 25px;
   padding-left: 10px;
 }
 .Landing-link {
@@ -805,6 +810,7 @@ p:hover::after {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  cursor: pointer;
 }
 
 .App-logo-container {
@@ -1004,6 +1010,7 @@ p:hover::after {
 
   .App-page {
       overflow-x: scroll;
+      overflow-y: hidden;
   }
 }
 
@@ -1015,7 +1022,6 @@ p:hover::after {
     bottom: 0px;
     max-height: 100vh;
     max-width: 100%;
-    overflow-x: scroll;
   }
 
   .Landing-schedule {
@@ -1025,7 +1031,6 @@ p:hover::after {
     bottom: 0px;
     max-height: 100vh;
     max-width: 100%;
-    overflow-x: scroll;
   }
 }
 
