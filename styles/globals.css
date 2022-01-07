@@ -291,7 +291,9 @@ a, a::after {
 .twitter-button::after {
   content: "   Twitter";
 }
-
+.tiktok-button::after {
+  content: "   TikTok";
+}
 .schedule-button::after {
   content: "   Schedule";
 }
@@ -302,10 +304,10 @@ a, a::after {
   content: "   Watch Video";
 }
 .aboutme-button::after {
-  content: "   About Me";
+  content: "About Me";
 }
-.preview-button::after {
-  content: "   Preview";
+.amazon-button::after {
+  content: "   Buy Me Shit";
 }
 h1::after {
   content: attr(data);
