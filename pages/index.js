@@ -91,7 +91,7 @@ export default function Home({letter, schedule, collab, aboutme}) {
           </button>
           <div className="Mobile-menu-nav">
             <a className="menu-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
-            <a className="menu-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+            <a className="menu-button" color="inherit" href="https://www.instagram.com/thesaddiewithafaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
             <a className="menu-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>
             <a className="menu-button" color="inherit" href="https://vm.tiktok.com/TTPdMBu299/"><FontAwesomeIcon className="icon" icon={faTiktok}/>TikTok</a>
             <a className="menu-item" onClick={() => { setContent("schedule"); setShowMenu(false);}}>
@@ -148,7 +148,7 @@ export default function Home({letter, schedule, collab, aboutme}) {
                   <a className="onlyfans-button" color="inherit" href="http://onlyfans.com/saddiewithafaddie"><div className="onlyfans-icon" />Only Fans</a>
                 </div>
                 <div className="Landing-link">
-                  <a className="insta-button" color="inherit" href="https://www.instagram.com/saddiewith.afaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
+                  <a className="insta-button" color="inherit" href="https://www.instagram.com/thesaddiewithafaddie"><FontAwesomeIcon className="icon" icon={faInstagram}/>Instagram</a>
                 </div>
                 <div className="Landing-link">
                   <a className="twitter-button" color="inherit" href="https://www.twitter.com/saddywithafaddy"><FontAwesomeIcon className="icon" icon={faTwitter}/>Twitter</a>

@@ -142,6 +142,7 @@ button {
 }
 .Landing-letter * {
   padding-bottom: 10px;
+  color: white;
   font-family: 'Leckerli One', cursive;
   font-size: 14px;
   text-align: center;
@@ -304,7 +305,7 @@ a, a::after {
   content: "   Watch Video";
 }
 .aboutme-button::after {
-  content: "About Me";
+  content: "   About Me";
 }
 .amazon-button::after {
   content: "   Buy Me Shit";
