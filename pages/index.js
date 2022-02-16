@@ -97,9 +97,6 @@ export default function Home({letter, schedule, collab, aboutme}) {
             <a className="menu-item" onClick={() => { setContent("schedule"); setShowMenu(false);}}>
               Schedule
             </a>
-            <a className="menu-item" onClick={() => { setContent("aboutme"); setShowMenu(false); }}>
-              About Me
-            </a>
             <a className="menu-item"  onClick={() => { setContent("collab"); setShowMenu(false); }}>
               Collab
             </a>
@@ -123,7 +120,6 @@ export default function Home({letter, schedule, collab, aboutme}) {
           </div>
           <div className="Landing-page-nav">
             <div className="nav-left">
-              <a className="aboutme-button" onClick={() => setContent("aboutme")}>About Me</a>
               <a className="schedule-button" onClick={() => setContent("schedule")} >Schedule</a>
               <a className="contact-button" onClick={() => setContent("collab")}>Collab</a>
             </div>

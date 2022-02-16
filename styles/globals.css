@@ -976,7 +976,7 @@ p:hover::after {
     left: 25px;
     bottom: 0px;
     flex-direction: column;
-    height: 200px;
+    height: 150px;
   }
 
   .nav-right {
@@ -994,7 +994,7 @@ p:hover::after {
     left: 100px;
     bottom: 0px;
     flex-direction: column;
-    height: 200px;
+    height: 150px;
   }
 
   .nav-right {
