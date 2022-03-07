@@ -916,10 +916,13 @@ p:hover::after {
   Responsive Mobile CSS
   ---------------------
 */
-
+#myVideo {
+  transform: scale(1);
+  object-fit: cover;
+}
 @media only screen and (max-width: 1200px) {
   #myVideo {
-    transform: scale(1.5);
+
   }
   .Mobile-button {
     display: block;
@@ -957,7 +960,7 @@ p:hover::after {
 }
 @media only screen and (max-width: 640px) {
   #myVideo {
-    transform: scale(3);
+
   }
 }
 
@@ -1043,6 +1046,7 @@ p:hover::after {
 @supports (-webkit-touch-callout: none) {
    #myVideo {
      transform: scale(3);
+     object-fit: none;
      margin-left: 0px;
      margin-top: -7vh;
      margin-right: 0px;
