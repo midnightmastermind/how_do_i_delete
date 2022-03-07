@@ -10,7 +10,6 @@ import applogo from '../styles/applogo2.png';
 import applogored from '../styles/applogored.png';
 import applogogreen from '../styles/applogogreen.png';
 import applogopink from '../styles/applogopink.png';
-import ReactPlayer from 'react-player';
 
 Home.getInitialProps = async (ctx) => {
   const letter = await require(`../doc/letter.md`)
@@ -24,9 +23,9 @@ async function grabVideo(url) {
   const myVideo = document.getElementById('myVideo');
 
   if(myVideo) {
-    let blob = await fetch(url).then(r => r.blob());
-    const videoUrl= makeURL(blob);
-    myVideo.src = videoUrl;
+    //let blob = await fetch(url).then(r => r.blob());
+    //const videoUrl= makeURL(blob);
+    //myVideo.src = videoUrl;
     const test = myVideo.play();
   }
 }
@@ -73,11 +72,12 @@ export default function Home({letter, schedule, collab, aboutme}) {
       <div className="App-video" dangerouslySetInnerHTML={{ __html: `
         <video
           id="myVideo"
+          class="video-js"
           preload="auto"
           muted={true}
           playsinline
-          src=""
-        ></video>
+          data-setup="{}"
+        ><source src="test1.mp4" type="video/mp4" /></video>
       ` }}>
       </div>
       }
