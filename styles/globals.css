@@ -139,6 +139,7 @@ button {
   animation-fill-mode: forwards;
   z-index: 2;
   position: relative;
+  overflow-y: scroll;
 }
 .Landing-letter * {
   padding-bottom: 10px;
@@ -188,6 +189,7 @@ button {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  overflow-y: scroll;
 }
 
 .Landing-schedule strong {
