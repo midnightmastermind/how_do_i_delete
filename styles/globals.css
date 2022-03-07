@@ -140,6 +140,7 @@ button {
   z-index: 2;
   position: relative;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .Landing-letter * {
   padding-bottom: 10px;
@@ -190,6 +191,7 @@ button {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .Landing-schedule strong {
@@ -1047,10 +1049,6 @@ p:hover::after {
 /* IOS CSS */
 @supports (-webkit-touch-callout: none) {
    #myVideo {
-     transform: scale(3);
-     object-fit: none;
-     margin-left: 0px;
-     margin-top: -7vh;
-     margin-right: 0px;
+
    }
 }
