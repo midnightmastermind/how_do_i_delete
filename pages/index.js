@@ -6,7 +6,7 @@ import { faHome, faBus, faPhone, faEnvelope, faBars, faArrowLeft } from '@fortaw
 import { faFacebookF, faInstagram, faGithub, faTwitter, faAmazon, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useRef, useEffect } from 'react';
-import applogo from '../styles/applogo2.png';
+import applogo from '../styles/applogo.png';
 import applogored from '../styles/applogored.png';
 import applogogreen from '../styles/applogogreen.png';
 import applogopink from '../styles/applogopink.png';
@@ -73,9 +73,11 @@ export default function Home({letter, schedule, collab, aboutme}) {
         <video
           id="myVideo"
           class="video-js"
+
           preload="auto"
           muted={true}
           playsinline
+          poster="vertical_background.jpg"
           data-setup="{}"
         ><source src="test1.mp4" type="video/mp4" /></video>
       ` }}>
